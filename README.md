@@ -19,12 +19,8 @@ a Mac.
 * Pre-compiled examples: https://github.com/homenc/HElib/tree/master/examples
 
 
-## Download and compile the library
+## Install the HElib library
 
-* Clone repo
-```
-git clone git@github.com:homenc/HElib.git
-```
 Steps for
 * [MacOS](#macos)
 * [Ubuntu](#ubuntu)
@@ -51,8 +47,9 @@ brew install cmake
 ```
 CMake generates Makefiles which enable you to compile the application with gcc ([link to cmake intro][cmakeintro])
 
-Compile the library:
+Download and compile the library:
 ```
+git clone git@github.com:homenc/HElib.git
 cd HElib
 mkdir build
 cd build
@@ -79,8 +76,9 @@ sudo apt-get update
 sudo apt-get install g++ cmake patchelf m4 libgmp-dev libntl-dev
 ```
 
-Compile the library:
+Download and compile the library:
 ```
+git clone git@github.com:homenc/HElib.git
 cd HElib
 mkdir build
 cd build
