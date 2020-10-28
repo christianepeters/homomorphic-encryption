@@ -6,8 +6,9 @@ I tried out [HElib][HElib], a library for homomorphic encryption.
 
 I simplified the instructions in the HElib [INSTALL.md][HElib-install].
 I don't plan to run any huge computations. It's all about trying
-out the library. I worked both on a Linux machine (Ubuntu) and on
-a Mac.
+out the library.
+
+It works both on a MacBook Air (Retina, 13-inch, 2018) with MacOS Catalina installed and on a 7-year old Acer Aspire 7 running Ubuntu 20.04.
 
 
 ## HElib documentation
