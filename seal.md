@@ -54,9 +54,16 @@ Prerequisites are `cmake` and a new compiler, a modern version of GNU G++ (>= 6.
     cd SEAL/
     cmake . -DSEAL_BUILD_EXAMPLES=ON
     ```
-* Compile and install the library system wide (requires root access).
+* Compile
   ```
-  make -j
+  make -j # on MacOS
+  ```
+  or
+  ```
+  make  # on Ubuntu (otherwise it hangs on my machine)
+  ```
+* Then install the library system wide (requires root access).
+  ```
   sudo make install
   ```
 
@@ -108,7 +115,29 @@ Responsible for the content of the page is [Christiane Peters][cpp].
 
 
 
+  #include "seal/seal.h"
+  #include <iostream>
 
+  using namespace std;
+  using namespace seal;
+
+  int main()
+  {
+          EncryptionParameters parms(scheme_type::BFV);
+          return 0;
+
+  }  #include "seal/seal.h"
+  #include <iostream>
+
+  using namespace std;
+  using namespace seal;
+
+  int main()
+  {
+          EncryptionParameters parms(scheme_type::BFV);
+          return 0;
+
+  }
 
 [cpp]: http://cbcrypto.org/
 [SEAL]: https://www.microsoft.com/en-us/research/project/microsoft-seal/
