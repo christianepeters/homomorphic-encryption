@@ -115,30 +115,6 @@ Responsible for the content of the page is [Christiane Peters][cpp].
 
 
 
-  #include "seal/seal.h"
-  #include <iostream>
-
-  using namespace std;
-  using namespace seal;
-
-  int main()
-  {
-          EncryptionParameters parms(scheme_type::BFV);
-          return 0;
-
-  }  #include "seal/seal.h"
-  #include <iostream>
-
-  using namespace std;
-  using namespace seal;
-
-  int main()
-  {
-          EncryptionParameters parms(scheme_type::BFV);
-          return 0;
-
-  }
-
 [cpp]: http://cbcrypto.org/
 [SEAL]: https://www.microsoft.com/en-us/research/project/microsoft-seal/
 [SEALLinuxMacOS]: https://www.microsoft.com/en-us/research/video/installing-microsoft-seal-on-linux-macos/
