@@ -6,7 +6,7 @@ I tried out [HElib][HElib], a library for homomorphic encryption.
 
 I simplified the instructions in the HElib [INSTALL.md][HElib-install].
 I don't plan to run any huge computations. It's all about trying
-out the library.
+out the library and computing a first example.
 
 It works both on a MacBook Air (Retina, 13-inch, 2018) with MacOS Catalina installed and on a 7-year old Acer Aspire 7 running Ubuntu 20.04.
 
@@ -15,7 +15,7 @@ It works both on a MacBook Air (Retina, 13-inch, 2018) with MacOS Catalina insta
 
 * Documentation of the library: https://homenc.github.io/HElib/
 * The math behind the HElib: [HElib-design.pdf][helib-math]
-* [HElib namespaces][namespaces] to keep track of all the function, class, and variable names in various libraries (for folks like me who forgot that there were namespaces in C++ see [here][cppns])
+* [HElib namespaces][namespaces] to keep track of all the function, class, and variable names in various libraries
 * Github https://github.com/homenc/HElib
 * Pre-compiled examples: https://github.com/homenc/HElib/tree/master/examples
 
@@ -144,8 +144,8 @@ Decrypted Result: [[2], [2], [2], [2], [2], [2], [2], [2], [2], [2], [2], [2], [
 
 
 ## Author
-Responsible for the content of the page is [Christiane Peters][cpp].
 
+Responsible for the content of the page is [Christiane Peters][cpp].
 
 
 

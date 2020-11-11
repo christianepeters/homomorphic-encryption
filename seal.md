@@ -3,6 +3,7 @@
 ## About
 
 I tried out [SEAL][SEAL], a library for homomorphic encryption published by Microsoft.
+The idea is to install it on a laptop and run a simple example.
 
 The SEAL library is written in C++.
 
@@ -13,7 +14,7 @@ The SEAL library is written in C++.
 
 ## Download and compile the library
 
-I'm following the instructions for MacOS and LInux in the SEAL [README.md][SEALRM].
+I'm following the instructions for MacOS and Linux in the SEAL [README.md][SEALRM].
 
 ### MacOS and Ubuntu
 
@@ -111,6 +112,7 @@ The `sealexamples` executable is located in `native/bin/`.
   Obviously there's no output. But it's a first minimal program using the SEAL library.
 
 ## Author
+
 Responsible for the content of the page is [Christiane Peters][cpp].
 
 
