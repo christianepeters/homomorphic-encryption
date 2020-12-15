@@ -130,16 +130,19 @@ target_link_libraries(helibdemo helib)
 
 ## Example Packed Arithmetic
 
-Let's try out the packed arithmetic example which is a nice illustration of SIMD (=Single instruction, multiple data).
+* Let's try out the packed arithmetic example which is a nice illustration of SIMD (=Single instruction, multiple data).
+
+* Compile using `cmake` in the examples folder.
+```
+cd HElib/examples/
+cmake .
+make BGV_packed_arithmetic
+```
+* Note that if you type `make`, it will also compile the other examples, but that may take more time.
+* Let's run the code.
 
 ```
-cd HElib/examples/BGV_packed_arithmetic
-cmake .
-make
-```
-Now let's run the example code without modification.
-```
-$ ./BGV_packed_arithmetic
+$ ./bin/BGV_packed_arithmetic
 
 *********************************************************
 *         Basic Mathematical Operations Example         *
