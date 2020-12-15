@@ -10,6 +10,7 @@ out the library and computing a first example.
 
 It works both on a MacBook Air (Retina, 13-inch, 2018) with MacOS Catalina installed and on a 7-year old Acer Aspire 7 running Ubuntu 20.04.
 
+Last version I tried: **HElib v1.3.0**
 
 ## HElib documentation
 
@@ -90,6 +91,40 @@ sudo make install
 When I used multiple threads for the `make` step, the machine crashed. So I decided to use just `make` rather than `make -j4`.
 
 The `helib` library is now installed in `/usr/local/./helib_pack/`.
+
+## Dummy example
+
+* Let's first check that the library is called correctly. For this let's have a look at this code:
+```
+#include <helib/helib.h>
+
+int main() {
+  return 0;
+}
+```
+* Create a cmake file `CMakeLists.txt`.
+```
+### simplified copy of the CMakeLists.txt file of the HElib examples
+cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
+## Use -std=c++17 as default.
+set(CMAKE_CXX_STANDARD 17)
+## Disable C++ extensions
+set(CMAKE_CXX_EXTENSIONS OFF)
+## Require full C++ standard
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+project(HELibDemo VERSION 1.0)
+add_executable(helibdemo helibdemo.cpp)
+find_package(helib 1.3.0 EXACT REQUIRED)
+target_link_libraries(helibdemo helib)
+```
+
+* Compile and run.
+  ```
+  cmake .
+  make
+  ./helibdemo
+  ```
+  Obviously there's no output. But it's a first minimal program using HElib.
 
 
 
