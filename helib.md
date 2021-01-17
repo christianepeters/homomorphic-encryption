@@ -4,13 +4,9 @@
 
 I tried out [HElib][HElib], a library for homomorphic encryption.
 
-I simplified the instructions in the HElib [INSTALL.md][HElib-install].
-I don't plan to run any huge computations. It's all about trying
-out the library and computing a first example.
+I simplified the instructions in the HElib [INSTALL.md][HElib-install]. I don't plan to run any huge computations. It's all about trying out the library and computing a first example.
 
-It works both on a MacBook Air (Retina, 13-inch, 2018) with MacOS Catalina installed and on a 7-year old Acer Aspire 7 running Ubuntu 20.04.
-
-Last version I tried: **HElib v1.3.0**
+Last version I tried: **HElib v1.3.1**
 
 ## HElib documentation
 
@@ -51,7 +47,7 @@ CMake generates Makefiles which enable you to compile the application with gcc (
 
 Download and compile the library:
 ```
-git clone git@github.com:homenc/HElib.git
+git clone https://github.com/homenc/HElib.git
 cd HElib
 mkdir build
 cd build
@@ -61,7 +57,7 @@ sudo make install
 ```
 The `helib` library is now installed in `/usr/local/./helib_pack/`.
 
-Jump to the [next chapter](#example-packed-arithmetic) to see how to work with an example.
+Jump to the [next chapter](#examples) to see how to work with an example.
 
 
 ### Ubuntu
@@ -80,7 +76,7 @@ sudo apt-get install g++ cmake patchelf m4 libgmp-dev libntl-dev
 
 Download and compile the library:
 ```
-git clone git@github.com:homenc/HElib.git
+git clone https://github.com/homenc/HElib.git
 cd HElib
 mkdir build
 cd build
@@ -92,17 +88,36 @@ When I used multiple threads for the `make` step, the machine crashed. So I deci
 
 The `helib` library is now installed in `/usr/local/./helib_pack/`.
 
-## Dummy example
+## Examples
 
-* Let's first check that the library is called correctly. For this let's have a look at this code:
+First copy the `examples folder` in the `HElib` directory:
+```
+cp examples myexamples
+```
+
+(I always copy the examples to a second directory, so in case I mess something up, I can always go back.)
+
+
+### Dummy example
+
+Let's first check that the library is called correctly.
+
+I create a little demo file
+```
+mkdir helibdemo
+cd helibdemo
+vi helibdemo.cpp
+```
+
+with the following content:
 ```
 #include <helib/helib.h>
-
 int main() {
   return 0;
 }
 ```
-* Create a cmake file `CMakeLists.txt`.
+
+In addition I create a cmake file `CMakeLists.txt`.
 ```
 ### simplified copy of the CMakeLists.txt file of the HElib examples
 cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
@@ -114,32 +129,34 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(HELibDemo VERSION 1.0)
 add_executable(helibdemo helibdemo.cpp)
-find_package(helib 1.3.0 EXACT REQUIRED)
+find_package(helib 1.3.1 EXACT REQUIRED)
 target_link_libraries(helibdemo helib)
 ```
 
-* Compile and run.
-  ```
-  cmake .
-  make
-  ./helibdemo
-  ```
-  Obviously there's no output. But it's a first minimal program using HElib.
+Compile and run.
+```
+cmake .
+make
+./helibdemo
+```
+
+Obviously there's no output. But it's a first minimal program using HElib.
 
 
 
-## Example Packed Arithmetic
+### Example Packed Arithmetic
 
-* Let's try out the packed arithmetic example which is a nice illustration of SIMD (=Single instruction, multiple data).
+Let's try out the packed arithmetic example which is a nice illustration of SIMD (=Single instruction, multiple data).
 
-* Compile using `cmake` in the examples folder.
+Compile using `cmake` in the examples folder.
 ```
 cd HElib/examples/
 cmake .
 make BGV_packed_arithmetic
 ```
-* Note that if you type `make`, it will also compile the other examples, but that may take more time.
-* Let's run the code.
+Note that if you type `make`, it will also compile the other examples, but that may take more time.
+
+Let's run the code.
 
 ```
 $ ./bin/BGV_packed_arithmetic
@@ -166,7 +183,7 @@ m = 32109, p = 4999, phi(m) = 16560
   generator 14596 has order (== Z_m^*) of 2
   T = [ 1 14596 3893 21407 320 14915 25618 11023 6073 20668 9965 27479 16820 31415 10009 27523 20197 2683 24089 9494 9131 23726 2320 19834 ]
 
-Security: 59.3374
+Security: 62.4783
 Creating secret key...
 Generating key-switching matrices...
 Number of slots: 24
@@ -181,9 +198,8 @@ Decrypted Result: [[2], [2], [2], [2], [2], [2], [2], [2], [2], [2], [2], [2], [
 :-)
 
 
-## Author
-
-Responsible for the content of the page is [Christiane Peters][cpp].
+---
+Author: [Christiane Peters][cpp].
 
 
 
