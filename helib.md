@@ -90,14 +90,6 @@ The `helib` library is now installed in `/usr/local/./helib_pack/`.
 
 ## Examples
 
-First copy the `examples folder` in the `HElib` directory:
-```
-cp examples myexamples
-```
-
-(I always copy the examples to a second directory, so in case I mess something up, I can always go back.)
-
-
 ### Dummy example
 
 Let's first check that the library is called correctly.
