@@ -91,7 +91,8 @@ Open the browser link https://127.0.0.1:8443/ and accept the certificate warning
 To make sure that I have write permissions, I switch to the terminal, type `bash` into the terminal window on the bottom. Type `touch a` which will make a file called `a` appear in my local directory. If you encounter writing permission issues, stop the toolkit using `./StopToolkit.sh`, and [execute the steps here](#permission-issue-workaround) before relaunching the container.
 
 
-Let the development begin.
+During the *Welcome* the IDE asks for which compiler to choose. This choice can be adapted when clicking on the compiler on the bottom blue bar. I chose GCC 9.3.0.
+
 
 ### Encrypted Search example
 
