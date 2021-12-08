@@ -2,7 +2,9 @@
 
 Homomorphic Encryption allows to perform calculations on encrypted data without decrypting it first ([Wikipedia][Wiki]).
 
-I wrote some instructions how to compile and run the 
+See [here](he.md) for a rough background on the topic.
+
+I wrote some instructions how to compile and run selected libraries. Status: mid 2021. Some may need an update. 
 
 * [HElib](helib.md),
 * [SEAL](seal.md), and
