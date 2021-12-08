@@ -43,7 +43,7 @@ https://crypto.stanford.edu/craig/craig-thesis.pdf
 * TFHE (TFHE: Fast Fully Homomorphic Encryption over the Torus) https://tfhe.github.io/tfhe/
 
 ## Companies in the HE space
-* IBM
+* IBM https://www.ibm.com/security/services/homomorphic-encryption
 * Microsoft https://www.microsoft.com/en-us/research/project/microsoft-seal/
 * Zama https://zama.ai/company/
 
