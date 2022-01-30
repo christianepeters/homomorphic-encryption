@@ -7,22 +7,85 @@ I tried out the [Fully Homomorphic Encryption (FHE) toolkit][FHELinux] on MacOS 
 * [Installation of the toolkit](#installation-of-the-toolkit)
 * [Working with the toolkit](#working-with-the-toolkit)
 
-Last version I tried: **2.0.1**
-Installation date: **8-April-2021**
+Last version I tried: **2.1.0.3 Public Release**
+Installation date: **30-January-2022**
 
 ## Installation of the toolkit
 
-Make sure you have [Docker](https://www.docker.com/) installed.
-
-On MacOS you can use [Docker for Desktop][Docker].
+Make sure you have [Docker](https://www.docker.com/) installed. On MacOS you can use [Docker for Desktop][Docker]. For instructions to install Docker on Ubuntu 20.04 see [here][mydocker].
 
 I'm using the command line to download and install.
 ```
 git clone https://github.com/ibm/fhe-toolkit-linux
 ```
 
-The quick and dirty way is to start with the preconfigured Docker images. Those are not up always up to date. Better would be to use the latest library version inside the toolkit and build the Docker image from scratch. See the instructions here: [Advanced Getting Started][AGS].
+The quick and dirty way is to start with the [preconfigured Docker images](#build-toolkit-from-preconfigured-image). Those are not up always up to date. 
 
+Better use the latest helib version inside the toolkit and build the Docker image from scratch. 
+
+Official instructions: 
+* [Advanced Getting Started][AGS]
+* [Getting Started][GS]
+ 
+
+### Build toolkit
+
+Build image on Ubuntu:
+```
+./BuildDockerImage.sh ubuntu
+```
+**FAILED (tested on 30-Jan-2022) => GO TO THE NEXT SECTION AND SEE IF THE PRE-CONFIGURED IMAGES WORK. **
+
+Check that you have the toolkit image is present:
+```
+$ docker images
+REPOSITORY                        TAG                 IMAGE ID            CREATED             SIZE
+```
+Typically, on Ubuntu you will experience issues with missing writing permissions. The following workaround will fix this:
+
+#### Permission Issue Workaround
+
+As noted in [Issue \#28][Issue28], there is a permissions issue which does not allow to write from the toolkit to the  `FHE-Toolkit-Workspace` directory on Linux (note on Mac I haven't had that problem).
+
+First change permissions of the working folder. 
+```
+chmod 777 FHE-Toolkit-Workspace
+```
+
+Then make this fix persistent and edit the `PersistData.sh` file, at the end of the file, line 260 or beyond, add a change permission command to the directory such as this...
+```
+chmod -R 777 $PERSISTENT_FHE_WORKSPACE_PATH
+```
+To persist a fetched toolkit build:
+```
+./PersistData.sh ibmcom/fhe-toolkit-ubuntu
+```
+Execute the script to persist a local toolkit:
+```
+./PersistData.sh local/fhe-toolkit-ubuntu
+```
+
+Now it should be possible to retain writing permissions inside the toolkit. Start the toolkit.
+
+
+#### Start the locally built toolkit
+
+Start the toolkit from the IBM preconfigured image.
+```
+./RunToolkit.sh -l ubuntu
+```
+
+You should see the message
+```
+FHE Development is open for business: https://127.0.0.1:8443/
+```
+
+In order to stop the container, you can run.
+```
+./StopToolkit.sh
+```
+
+Next: go to the [examples](#working-with-the-toolkit).
 
 
 ### Build toolkit from preconfigured image
@@ -58,30 +121,6 @@ In order to stop the container, you can run.
 
 Next: go to the [examples](#working-with-the-toolkit).
 
-
-### Permission Issue Workaround
-
-As noted in [Issue \#28][Issue28], there is a permissions issue which does not allow to write from the toolkit to the  `FHE-Toolkit-Workspace` directory on Linux (note on Mac I haven't had that problem).
-
-First change permissions of the working folder. 
-```
-chmod 777 FHE-Toolkit-Workspace
-```
-
-Then make this fix persistent and edit the `PersistData.sh` file, at the end of the file, line 260 or beyond, add a change permission command to the directory such as this...
-```
-chmod -R 777 $PERSISTENT_FHE_WORKSPACE_PATH
-```
-To persist a fetched toolkit build:
-```
-./PersistData.sh ibmcom/fhe-toolkit-ubuntu
-```
-Execute the script to persist a local toolkit:
-```
-./PersistData.sh local/fhe-toolkit-ubuntu
-```
-
-Now it should be possible to retain writing permissions inside the toolkit. Start the toolkit.
 
 
 ## Working with the toolkit
@@ -166,5 +205,7 @@ Author: [Christiane Peters][cpp].
 [cpp]: 		http://cbcrypto.org/
 [FHELinux]: https://github.com/ibm/fhe-toolkit-linux
 [AGS]: 		https://github.com/IBM/fhe-toolkit-linux/blob/master/GettingStarted.Advanced.md
+[GS]: https://github.com/IBM/fhe-toolkit-linux/blob/master/GettingStarted.md
 [Issue28]: 	https://github.com/IBM/fhe-toolkit-linux/issues/28#issuecomment-690673882
 [Docker]:	https://www.docker.com/products/docker-desktop
+[mydocker]: https://github.com/christianepeters/howto/blob/master/docker.md
