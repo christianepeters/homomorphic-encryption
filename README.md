@@ -2,7 +2,7 @@
 
 Homomorphic Encryption allows to perform calculations on encrypted data without decrypting it first ([Wikipedia][Wiki]).
 
-See [here](he.md) for a rough background on the topic.
+See [here](he.md) for a collection of links on Homomorphic Encryption (with thanks to the [FHE.org community][FHEorg]).
 
 I wrote some instructions how to compile and run selected libraries. Status: mid 2021. Some may need an update. 
 
@@ -18,3 +18,4 @@ Responsible for the content of the page is [Christiane Peters][cpp].
 
 [cpp]: http://cbcrypto.org/
 [Wiki]: https://en.wikipedia.org/wiki/Homomorphic_encryption
+[FHEorg]: https://fhe.org/
