@@ -34,7 +34,8 @@ Build image on Ubuntu:
 ```
 ./BuildDockerImage.sh ubuntu
 ```
-**FAILED (tested on 30-Jan-2022) => GO TO THE NEXT SECTION AND SEE IF THE PRE-CONFIGURED IMAGES WORK. **
+**
+FAILED (tested on 30-Jan-2022) => GO TO THE NEXT SECTION AND SEE IF THE PRE-CONFIGURED IMAGES WORK.**
 
 Check that you have the toolkit image is present:
 ```
@@ -92,14 +93,14 @@ Next: go to the [examples](#working-with-the-toolkit).
 
 Get the image from the github repo:
 ```
-$ ./FetchDockerImage.sh ubuntu
+./FetchDockerImage.sh ubuntu
 ```
 Check that you have the toolkit image is present:
 ```
 $ docker images
 REPOSITORY                        TAG                 IMAGE ID            CREATED             SIZE
-ibmcom/fhe-toolkit-ubuntu-amd64   latest              c5511ec1c0d8        4 weeks ago         2.62GB
-ibmcom/fhe-toolkit-ubuntu         latest              c5511ec1c0d8        4 weeks ago         2.62GB
+ibmcom/fhe-toolkit-ubuntu-amd64   latest    fc8b02460f0a   7 months ago    2.64GB
+ibmcom/fhe-toolkit-ubuntu         latest    fc8b02460f0a   7 months ago    2.64GB
 ```
 
 If you are on Ubuntu you may experience issues with missing writing permissions. See here for a [workaround](#permission-issue-workaround).
