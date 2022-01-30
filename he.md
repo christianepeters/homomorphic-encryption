@@ -1,10 +1,18 @@
 # Homomorphic Encryption
 
+**tl;dr** Homomorphic Encryption allows to perform calculations on encrypted data without decrypting it first.
+
 ## About
 
-Homomorphic Encryption allows to perform calculations on encrypted data without decrypting it first.
+### Intros for non-cryptographers
 
-## Homomorphic Encryption
+* [Introduction to FHE by Pascal Paillier](https://fhe.org/talks/introduction-to-fhe-by-pascal-paillier)
+* Marc Joye’s blog for Zama FHE: [Homomorphic Encryption 101](https://medium.com/zama-ai/homomorphic-encryption-101-c1524fb76013)
+* FHE Community of Interest: [FHE.org](https://fhe.org/)
+  * Monthly meetings on FHE: https://www.meetup.com/fhe-org/
+  * Chat space https://discord.fhe.org (wealth of information and discussions on how to use the libraries etc)
+* HE Standardization https://homomorphicencryption.org/
+
 
 ### Example HE cryptosystems
 
@@ -35,24 +43,56 @@ https://crypto.stanford.edu/craig/craig-thesis.pdf
 => floating point arithmetic => machine learning
 ```
 
-## HE libraries
+## Libraries
 
-* HElib https://github.com/homenc/HElib
-* PALISADE https://palisade-crypto.org/
-* SEAL https://www.microsoft.com/en-us/research/project/microsoft-seal/
-* TFHE (TFHE: Fast Fully Homomorphic Encryption over the Torus) https://tfhe.github.io/tfhe/
+### HElib
 
-## Companies in the HE space
-* IBM https://www.ibm.com/security/services/homomorphic-encryption
-* Microsoft https://www.microsoft.com/en-us/research/project/microsoft-seal/
-* Zama https://zama.ai/company/
+* Website: https://homenc.github.io/HElib
+* Repo: https://github.com/HomEnc/HElib
+* Docs: https://homenc.github.io/HElib/
+* Bug report: https://github.com/homenc/HElib/issues
+* Math behind HElib: [HElib-design.pdf](https://homenc.github.io/HElib/documentation/Design_Document/HElib-design.pdf)
+* FHE-toolkit https://github.com/ibm/fhe-toolkit-linux (containerized IDE with precompiled libraries and examples)
 
-## Community 
-* Monthly meetings on FHE: https://www.meetup.com/fhe-org/
-* HE Standardization https://homomorphicencryption.org/
+
+### SEAL
+
+* Website: https://www.microsoft.com/en-us/research/project/microsoft-seal
+* Repo: https://github.com/microsoft/SEAL
+* Docs: https://github.com/microsoft/SEAL#introduction
+* Bug report: https://github.com/microsoft/SEAL/issues
+
+### Concrete
+
+* Website: https://zama.ai/concrete
+* Repo: https://github.com/zama-ai/concrete
+* Docs: https://docs.zama.ai/concrete/lib
+* Bug report: https://github.com/zama-ai/concrete/issues
+* Programmable Bootstrapping whitepaper
+* Python package: GitHub: https://github.com/zama-ai/concrete-numpy
+
+### PALISADE
+
+* Website: https://palisade-crypto.org/
+* Repo: https://gitlab.com/palisade/palisade-release
+* Docs: https://palisade-crypto.org/documentation
+* Bug report: https://gitlab.com/palisade/palisade-release/-/issues
+
+### Intel Homomorphic Encryption Acceleration Library (HEXL)
+
+* [Intel HEXL](https://intel.github.io/hexl/v1.2.3/doxygen/html/index.html)
+* Repo: https://github.com/intel/hexl
+
+
+### Google C++ compiler
+
+* Repo: https://github.com/google/fully-homomorphic-encryption
+* Examples: https://github.com/google/fully-homomorphic-encryption/tree/main/transpiler/examples
+* Blog Post: [Our latest updates on Fully Homomorphic Encryption](https://developers.googleblog.com/2021/06/our-latest-updates-on-fully-homomorphic-encryption.html)
+
 
 ## First steps to make FHE practical
-In 2020, IBM Research conducted a project with a Brazilian Bank to implement a pilot using Homomorphic Encryption (HE) to a machine learning (ML) pipeline. Specifically they used HE in the ML to two of the important ML tasks, namely the variable selection phase of the model generation task and the prediction task.
+In 2020, IBM Research conducted a project with a Brazilian Bank to implement a pilot using Homomorphic Encryption (HE) to a machine learning (ML) pipeline. Specifically they used HE in the ML for both the variable selection of the model generation and the actual prediction computation.
 
 * IBM Research, Hursley, UK and Banco Bradesco SA, Osasco, SP, Brasil ([link][DR])
 * Masters et al. " Towards a Homomorphic Machine Learning Big Data Pipeline for the Financial Services Sector" ([eprint][EP191113])
