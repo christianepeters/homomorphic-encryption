@@ -8,7 +8,7 @@ I tried out the [Fully Homomorphic Encryption (FHE) toolkit][FHELinux] on MacOS 
 * [Working with the toolkit](#working-with-the-toolkit)
 
 Last version I tried: **2.1.0.3 Public Release**
-Installation date: **30-January-2022**
+Installation date: **30-January-2022** => build fails and preconfig image examples don't work
 
 ## Installation of the toolkit
 
@@ -57,13 +57,13 @@ Then make this fix persistent and edit the `PersistData.sh` file, at the end of 
 ```
 chmod -R 777 $PERSISTENT_FHE_WORKSPACE_PATH
 ```
-To persist a fetched toolkit build:
-```
-./PersistData.sh ibmcom/fhe-toolkit-ubuntu
-```
 Execute the script to persist a local toolkit:
 ```
 ./PersistData.sh local/fhe-toolkit-ubuntu
+```
+To persist a fetched toolkit build:
+```
+./PersistData.sh ibmcom/fhe-toolkit-ubuntu
 ```
 
 Now it should be possible to retain writing permissions inside the toolkit. Start the toolkit.
@@ -122,6 +122,7 @@ In order to stop the container, you can run.
 
 Next: go to the [examples](#working-with-the-toolkit).
 
+Update (30-Jan-2022): build works, examples fail.
 
 
 ## Working with the toolkit
