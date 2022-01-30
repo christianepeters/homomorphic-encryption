@@ -43,6 +43,13 @@ https://crypto.stanford.edu/craig/craig-thesis.pdf
 => floating point arithmetic => machine learning
 ```
 
+### Mathematics
+* [Math behind HElib (BGV explained)](https://homenc.github.io/HElib/documentation/Design_Document/HElib-design.pdf)
+* [CKKS explained: Part 1, Vanilla Encoding and Decoding](https://blog.openmined.org/ckks-explained-part-1-simple-encoding-and-decoding/)
+
+
+
+
 ## Libraries
 
 ### HElib
@@ -68,7 +75,6 @@ https://crypto.stanford.edu/craig/craig-thesis.pdf
 * Repo: https://github.com/zama-ai/concrete
 * Docs: https://docs.zama.ai/concrete/lib
 * Bug report: https://github.com/zama-ai/concrete/issues
-* Programmable Bootstrapping whitepaper
 * Python package: GitHub: https://github.com/zama-ai/concrete-numpy
 
 ### PALISADE
