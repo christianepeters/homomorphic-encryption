@@ -7,8 +7,7 @@ I tried out [HElib][HElib], a library for homomorphic encryption, written in C++
 I simplified the instructions in the HElib [INSTALL.md][HElib-install]. I don't plan to run any huge computations. It's all about trying out the library and computing a first example.
 
 
-
-Last version I tried: **HElib v2.1.0**
+Last version I tried: **HElib v2.2.1** (1-Feb-2022)
 
 
 ## HElib documentation
@@ -31,7 +30,7 @@ I'm following the instructions in the HElib [INSTALL.md][HElib-install].
 
 ### MacOS
 
-Latest version I tried on Mac was v2.0.0; see [Ubuntu](#ubuntu) for v2.1.0.
+Latest version I tried on Mac was v2.0.0; see [Ubuntu](#ubuntu) for v2.2.1.
 
 Check pre-reqs on MacOS:
 * Apple clang >= 11.0.0
@@ -145,6 +144,29 @@ Compile and run.
 Obviously there's no output. But it's a first minimal program using HElib.
 
 Good to go and have a look at the examples that were shipped with the library.
+
+### Compile the provided Examples
+
+Go to the `examples` folder and compile all examples.
+
+```
+cd ~/HElib/examples/
+cmake .
+make
+```
+Now you'll have compiled examples illustrating BGV and CKKS:
+* [BGV_binary_arithmetic](#binary-arithmetic)
+* [BGV_packed_arithmetic](#example-packed-arithmetic)
+* [BGV_country_db_lookup](#privacy-preserving-search-example)
+* 01_ckks_basics
+* 02_ckks_depth
+* 03_ckks_data_movement
+* 04_ckks_matmul
+* 05_ckks_multlowlvl
+* 06_ckks_complex
+* 07_ckks_serialization
+* 08_ckks_deserialization
+
 
 ### Binary Arithmetic
 
