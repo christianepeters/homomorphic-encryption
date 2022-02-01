@@ -1,15 +1,15 @@
 # Homomorphic Encryption
 
-Homomorphic Encryption allows to perform calculations on encrypted data without decrypting it first ([Wikipedia][Wiki]).
+Homomorphic Encryption allows to perform calculations on encrypted data.
 
-See [here](he.md) for a collection of links on Homomorphic Encryption (with thanks to the [FHE.org community][FHEorg]).
+I put together a [collection of links](he.md) on Homomorphic Encryption - with a big thanks to the [FHE.org community][FHEorg].
 
-I wrote some instructions how to compile and run selected libraries. Status: mid 2021. Some may need an update. 
+I wrote some instructions how to compile and run selected libraries. Status: Feb 2022. 
 
-* [HElib](helib.md),
-* [SEAL](seal.md), and
-* the [FHE toolkit](fhetoolkit.md) which is a containerized version of HElib coming with its own IDE.
+* [HElib](helib.md)
+* [SEAL](seal.md)
 
+Note that the [FHE toolkit](fhetoolkit.md) (containerized version of HElib) doesn't compile anymore in Feb 2022. Looks like the project has been abandonded.
 
 ## Author
 Responsible for the content of the page is [Christiane Peters][cpp].
